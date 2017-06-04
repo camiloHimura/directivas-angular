@@ -1,0 +1,22 @@
+ <code>data | json</code>: 
+<div>{{data | json}}</div><br>
+<div><code>observable|async</code><br>
+: Time: {{ time | async }}</div><br>
+<div><code>date</code><br>
+<p>The time is {{today | date:'fullDate'}}
+<div><code>percent</code><br>
+<p>A: {{0.12321 | percent}}</p>
+<p>B: {{0.1231| percent:'4.3-5'}}</p>
+<div><code>titlecase</code><br>
+<p>{{title | titlecase}}</p>
+<div><code>lowercase</code><br>
+<p>{{title | lowercase}}</p>
+<div><code>uppercase</code><br>
+<p>{{title | uppercase}}</p>
+
+<div><code>currency</code><br>
+<p>B: {{0.324324 | currency:'USD':false:'4.2-2'}}</p>
+<div><code>slice</code><br>
+<ul>
+<li *ngFor="let i of collection | slice:1:3">{{i}}</li>
+</ul>`

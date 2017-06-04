@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+.bkDarkBlue{
+    background: #193441;
+}
+.bkBlue{
+    background: #3E606F;
+}
+.bkDarkGreen{
+    background: #91AA9D;
+}
+.bkGreen{
+    background: #D1DBBD;
+}
+
+
+.colorDarkBlue{
+    color: #193441;
+}
+.colorBlue{
+    color: #3E606F;
+}
+.colorDarkGreen{
+    color: #91AA9D;
+}
+.colorGreen{
+    color: #D1DBBD;
+}
+.colorOrange{
+    color: orange;
+}
+.colorGrey{
+    color: grey;
+}
+.colorWhite{
+    color: white;
+}
+.pointer{
+    cursor: pointer;
+}

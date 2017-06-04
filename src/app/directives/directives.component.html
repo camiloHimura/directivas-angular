@@ -1,0 +1,126 @@
+
+<h1 class="text-center">Directivas</h1>
+<br>
+<h1>Ng Class</h1>
+
+<code>[ngClass]="'bkGreen'"</code>
+<p [ngClass]="'bkGreen'" >parrafo milo </p>
+
+<code>[ngClass]="['bkBlue', 'colorWhite']"</code>
+<p [ngClass]="['bkBlue', 'colorWhite']">parrafo milo </p>
+
+<code>[ngClass]="&#123;'bkDarkGreen colorWhite': true&#125;"</code>
+<p [ngClass]="{'bkDarkGreen colorWhite': true}">parrafo milo </p>
+
+<code>[ngClass]="&#123;'bkGreen colorWhite': keyClass&#125;"</code>
+<p [ngClass]="{'bkGreen colorWhite': keyClass}">parrafo milo </p>
+
+<br>
+<h1>Ng If</h1>
+<button class="btn btn-primary btn-sm" (click)="changeShow()">Change</button>
+<br>
+<code>*ngIf="showContend; then thenBlock else elseBlock"</code>
+<div *ngIf="showContend; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+<br>
+<code>&lt;ng-template #thenBlock&gt;</code>
+  <div class="card">
+    <div class="card-header bkBlue">Titulo True</div>
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <br>
+  <code>&lt;ng-template #elseBlock&gt;</code>
+  <div class="card">
+    <div class="card-header bkGreen">Titulo False</div>
+  </div>
+</ng-template>
+
+<br>
+<button class="btn btn-primary btn-sm" (click)="changeShowComponent()">Change</button>
+<br>
+<div *ngIf="showComponent; then thenBlockComponent else elseBlockComponent"></div>
+<ng-template #thenBlockComponent>
+  <br>
+  <code>&lt;app-component-one&gt; &lt;/app-component-one&gt;</code>
+  <app-component-one></app-component-one>
+</ng-template>
+<ng-template #elseBlockComponent>
+  <br>
+  <code>&lt;app-component-two&gt; &lt;/app-component-two&gt;</code>
+  <app-component-two></app-component-two>
+</ng-template>
+
+<br>
+<h1>Ngstyle</h1>
+<code>[ngStyle]="&#123;'color': 'orange', 'font-size': '20px'&#125;"</code>
+<div [ngStyle]="{'color': 'orange', 'font-size': '40px'}">Hola estilo en linea</div>
+<br>
+<h1>ngSwitch</h1>
+<code>[ngSwitch]="showCase"</code>
+<br>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a [ngClass]="{'active': optionTap === 1}" class="nav-link pointer" (click)="changeOptionTaps(1)">Tap 1</a>
+  </li>
+  <li class="nav-item">
+    <a [ngClass]="{'active': optionTap === 2}" class="nav-link pointer" (click)="changeOptionTaps(2)">Tap 2</a>
+  </li>
+  <li class="nav-item">
+    <a [ngClass]="{'active': optionTap === 3}" class="nav-link pointer" (click)="changeOptionTaps(3)">Tap 3</a>
+  </li>
+</ul>
+<div [ngSwitch]="optionTap">
+  <div *ngSwitchCase="1">
+    <div class="card card-inverse mb-3 text-center">
+    <code>*ngSwitchCase="1"</code>
+      <div class="card-block">
+        <blockquote class="card-blockquote">
+          <p class="colorDarkBlue">Contenido tap 1</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="2">
+    <div class="card card-inverse mb-3 text-center">
+    <code>*ngSwitchCase="2"</code>
+      <div class="card-block">
+        <blockquote class="card-blockquote">
+          <p class="colorDarkBlue">Contenido tap 2</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="3">
+    <div class="card card-inverse mb-3 text-center">
+    <code>*ngSwitchCase="3"</code>
+      <div class="card-block">
+        <blockquote class="card-blockquote">
+          <p class="colorDarkBlue">Contenido tap 3</p>
+        </blockquote>
+      </div>
+    </div>    
+  </div>
+  <div *ngSwitchDefault>
+     <div class="card card-inverse mb-3 text-center">
+      <code>*ngSwitchDefault</code>
+      <div class="card-block">
+        <blockquote class="card-blockquote">
+          <p class="colorDarkBlue">Selecciona una opciòn</p>
+        </blockquote>
+      </div>
+    </div>    
+  </div>
+</div>
+<h1>ngFor</h1>
+<ul>
+  <code>*ngFor="let list of showList; index as position; first as isFirst; last as isLast"</code>
+  <br>
+  <br>
+  <li *ngFor="let list of showList; index as position; first as isFirst; last as isLast">
+    <code *ngIf="isFirst">[ngClass]="&#123;'bkDarkGreen': isFirst&#125;</code>
+    <code *ngIf="isLast">[ngClass]="&#123;'bkDarkGreen': isLast&#125;</code>
+    <div [ngClass]="{'bkDarkGreen': isFirst, 'bkBlue': isLast}">Camilo -  {{position}}</div>
+  
+  </li>
+</ul>
