@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DirectivesComponent } from './directives/directives.component';
@@ -11,6 +11,7 @@ import { FormsComponent } from './forms/forms.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ComponenOneComponent } from './directives/component-one/component-one.component';
 import { ComponentTwoComponent } from './directives/component-two/component-two.component';
+import { ObservablesComponent } from './observables/observables.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ComponentTwoComponent } from './directives/component-two/component-two.
     FormsComponent,
     PipesComponent,
     ComponenOneComponent,
-    ComponentTwoComponent
+    ComponentTwoComponent,
+    ObservablesComponent
   ],
   imports: [
     BrowserModule,

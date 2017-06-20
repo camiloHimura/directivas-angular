@@ -1,9 +1,15 @@
+<!--La idea de este proyecto es crear un material de consulta con las
+directivas, filtros, validaciones y metodos mas utilizados a la hora de g
+enerar un proyecto en angular.
+
+Att: Camilo Himura-->
 <div class="container">
   <nav class="breadcrumb">
     <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/directivas']">Directivas</a>
     <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/parametros/', 3]">rutas</a>
     <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/formularios/']">formularios</a>
     <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/pipes/']">Pipes</a>
+    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/observables/']">observables</a>
   </nav>
 
   <router-outlet></router-outlet>

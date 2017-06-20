@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -7,9 +7,12 @@ import { FormsModule }   from '@angular/forms';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  powers: string[]= ["Hola", "desde", "componente"]
+  powers: string[]= ['Hola', 'desde', 'componente']
   ngOnInit() {
   }
 
+  onSubmit(): void{
+    console.log('onSubmit');
+  }
 
 }
