@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
-import { ComponenOneComponent } from './componen-one.component';
+import { ComponenOneComponent } from './component-one.component';
 
 describe('ComponenOneComponent', () => {
   let component: ComponenOneComponent;

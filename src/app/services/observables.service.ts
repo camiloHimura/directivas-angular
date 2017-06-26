@@ -19,14 +19,14 @@ export class ObservablesService {
   /**
    * Obtiene la informacion y aplica formato json antes de retornar el observable
    */
-  getMap(): any {
+  getMap(): Observable<any> {
     return this.http.get('https://reqres.in/api/users/2')
             .map(info => info.json().data);
   }
   /**
    * control de error al utilizar observables
    */
-  getError(): any {
+  getError(): Observable<any> {
     return this.http.get('https://reqres.in/api/users/camilo')
             .map(info => info.json().data)
             .catch(this.handleError);
@@ -34,18 +34,26 @@ export class ObservablesService {
   /**
    * Ejecuta metodos con la ayuda del operador Do
    */
-  getWhitDo(): any {
+  getWhitDo(): Observable<any> {
     return this.http.get('https://reqres.in/api/users/2')
-            .do(info => {console.log('before map'); console.log(info)})
+            .do(info => {/*console.log('before map'); console.log(info)*/})
             .map(info => info.json().data)
-            .do(info => {console.log('after map'); console.log(info)})
+            .do(info => {/*console.log('after map'); console.log(info)*/})
+            .catch(this.handleError);
+  }
+  /**
+   * Retorna un listado de elemetos
+   */
+  getList(): Observable<any> {
+    return this.http.get('https://reqres.in/api/users?page=1')
+            .map(info => info.json().data)
             .catch(this.handleError);
   }
 
   /**
    * Manejador de errores
    */
-  private handleError(error){
+  private handleError(error) {
     return Observable.throw('Error en peticion');
   }
 

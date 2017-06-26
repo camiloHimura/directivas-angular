@@ -9,14 +9,14 @@ import {Observable} from 'rxjs/Observable';
 export class PipesComponent implements OnInit {
   data: Object = {foo: 'bar', baz: 'qux', nested: {xyz: 3, numbers: [1, 2, 3, 4, 5]}};
   today: number = Date.now();
-  title: string= "cristian camilo";
+  title: String = 'cristian camilo';
   collection: string[] = ['a', 'b', 'c', 'd'];
   constructor() { }
 
   ngOnInit() {
   }
 
-  time = new Observable<string>((observer: any) => {
+  time = new Observable<string> ((observer: any) => {
     setInterval(() => observer.next(new Date().toString()), 1000);
   });
 }

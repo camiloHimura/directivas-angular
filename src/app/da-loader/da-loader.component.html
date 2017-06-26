@@ -1,0 +1,9 @@
+<div [ngClass]='{"show": showLoader}' class='loading'>
+    <div *ngIf='isUrl === true; then thenBlockComponent else elseBlockComponent'></div>
+    <ng-template #thenBlockComponent>
+        <h1>Cargando...</h1>
+    </ng-template>
+    <ng-template #elseBlockComponent>
+        <img src='{{urlLoader}}'>
+    </ng-template>
+</div>

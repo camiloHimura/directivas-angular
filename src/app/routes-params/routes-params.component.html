@@ -1,1 +1,6 @@
-<p>Id de la pagina: {{idPage}}</p>
+<div class="container">
+  <nav class="breadcrumb">
+    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/rutas/children/2']">Children</a>
+    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/rutas/resolve']">Resolve</a>
+  </nav>
+<router-outlet></router-outlet>

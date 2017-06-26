@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ObservablesService } from './../services/observables.service';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { DaLoaderService } from './../da-loader/da-loader.service';
 
 @Component({
   selector: 'app-observables',
@@ -16,14 +15,17 @@ export class ObservablesComponent implements OnInit {
   getError: string;
   getWhitDo: string;
 
-  constructor(private observablesService: ObservablesService) { }
+  constructor(private observablesService: ObservablesService,
+              private daLoaderService: DaLoaderService) { }
 
   ngOnInit() {
+    this.daLoaderService.show();
+
     this.observablesService.getFirst()
         .subscribe(info => this.getJson = info.json());
 
     this.observablesService.getMap()
-        .subscribe(info => { this.getMap = info; });
+        .subscribe(info => { this.getMap = info; this.daLoaderService.close(); });
 
     this.observablesService.getError()
         .subscribe(
@@ -34,5 +36,4 @@ export class ObservablesComponent implements OnInit {
     this.observablesService.getWhitDo()
         .subscribe(info => { this.getWhitDo = info; });
   }
-
 }

@@ -5,16 +5,19 @@ enerar un proyecto en angular.
 Att: Camilo Himura-->
 <div class="container">
   <nav class="breadcrumb">
-    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/directivas']">Directivas</a>
-    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/parametros/', 3]">rutas</a>
+    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/directivas/']">Directivas</a>
+    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/animaciones/']">Animaciones</a>
+    <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/rutas/']">rutas</a>
     <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/formularios/']">formularios</a>
     <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/pipes/']">Pipes</a>
     <a class="breadcrumb-item" routerLinkActive="active" [routerLink]="['/observables/']">observables</a>
   </nav>
 
   <router-outlet></router-outlet>
-  <h1>
+<!--  <h1>
     base: 
     {{location.path()}}
-  </h1>
+  </h1>-->
 </div>
+
+<app-da-loader></app-da-loader>

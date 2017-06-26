@@ -38,3 +38,24 @@
 .pointer{
     cursor: pointer;
 }
+
+.loading {
+    top: 0;
+    left: 0;
+    opacity: 0; 
+    width: 100%;
+    z-index: -1; 
+    height: 100%;
+    display: flex;
+    position: fixed;
+    color: #E1E6FA;
+    align-items: center;
+    background: rgba(18, 120, 153, 0.86);
+    justify-content: center;
+    transition: opacity .3s;
+}
+
+app-root:empty + .loading, .show {
+    opacity: 1;
+    z-index: 100;
+}

@@ -12,9 +12,11 @@ import { DirectivesComponent } from './directives/directives.component';
 })
 export class AppComponent {
   location: Location;
-  title: string = "funciona test";
-  constructor(location: Location) { 
-      this.location = location; 
-      console.log(this.location)
+  title: String = 'funciona test';
+  urlLoader = 'solos';
+
+  constructor(location: Location) {
+      this.location = location;
+      console.log(this.location);
   }
 }
