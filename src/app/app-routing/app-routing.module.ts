@@ -4,6 +4,8 @@ import { DirectivesComponent } from './../directives/directives.component';
 import { RoutesParamsComponent } from './../routes-params/routes-params.component';
 import { FormsComponent } from './../forms/forms.component';
 import { PipesComponent } from './../pipes/pipes.component';
+import { SanitizerComponent } from './../sanitizer/sanitizer.component';
+
 import { ObservablesComponent } from './../observables/observables.component';
 import { AnimationComponent } from './../animation/animation/animation.component';
 
@@ -18,6 +20,7 @@ const routes: Routes = [
   { path: 'formularios', component: FormsComponent },
   { path: 'observables', component: ObservablesComponent },
   { path: 'animaciones', component: AnimationComponent },
+  { path: 'sanitizer', component: SanitizerComponent },
   { path: 'rutas', component: RoutesParamsComponent,
     children: [{
                 path: 'children/:id',
@@ -32,6 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  //imports: [RouterModule.forRoot(routes, {useHash: true})],
   imports: [RouterModule.forRoot(routes)],
   providers: [RouteResolveService],
   exports: [RouterModule]

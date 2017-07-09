@@ -15,13 +15,13 @@ export class DirectivesComponent implements OnInit {
   optionTap: number;
   objStyle: string = 'font-style: 20px';
   showCase: string;
-  showList: Array<number> = [1, 2, 3, 4, 5];
+  showList: Array<number> = [1, 2, 3, 4];
   constructor() { }
 
   ngOnInit() {
     this.keyClass = true;
     this.showContend = true;
-    this.showCase = '1';
+    this.showCase = '8';
   }
 
   changeShow() {

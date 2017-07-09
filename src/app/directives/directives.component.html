@@ -112,6 +112,20 @@
     </div>    
   </div>
 </div>
+
+
+<h1>ngTemplateOutlet</h1>
+  <ng-container *ngTemplateOutlet="greet"></ng-container>
+  <hr>
+  <ng-container *ngTemplateOutlet="eng"></ng-container>
+  <hr>
+  <ng-container *ngTemplateOutlet="svk"></ng-container>
+  <hr>
+
+  <ng-template #greet><div>Hello</div></ng-template>
+  <ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
+  <ng-template #svk let-person="localSk"><span>Ahoj {{person}}!</span></ng-template>
+
 <h1>ngFor</h1>
 <ul>
   <code>*ngFor="let list of showList; index as position; first as isFirst; last as isLast"</code>

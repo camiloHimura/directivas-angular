@@ -1,0 +1,7 @@
+
+<h1 class="text-center">Sanitizer</h1>
+<br>
+<h1 class="titleNgClass">bypassSecurityTrustHtml</h1>
+<br>
+<p>Evitar este metodo, se debe aplicar un sanitizer para evitar XSS</p>
+<div [innerHtml]="contenidoHtml | sanitizerTrustHtml"></div>

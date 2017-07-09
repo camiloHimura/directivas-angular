@@ -19,6 +19,8 @@ import { ResolveRoutingComponent } from './routes-params/resolve-routing/resolve
 import { ObservablesService } from './services/observables.service';
 import { DaLoaderModule } from './da-loader/da-loader.module';
 import { AnimationComponent } from './animation/animation/animation.component';
+import { SanitizerComponent } from './sanitizer/sanitizer.component';
+import { SanitizerPipe } from './pipes/sanitizer.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AnimationComponent } from './animation/animation/animation.component';
     ObservablesComponent,
     ChildrenRoutingComponent,
     ResolveRoutingComponent,
-    AnimationComponent
+    AnimationComponent,
+    SanitizerComponent,
+    SanitizerPipe
   ],
   imports: [
     HttpModule,

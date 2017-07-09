@@ -1,15 +1,16 @@
 <div class="container">
   <h1>Hero Form</h1>
-  <form (ngSubmit)="onSubmit()" #camiloForm="ngForm">
+  <form (ngSubmit)="onSubmit(camiloForm, Nombre)" #camiloForm="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
       <input name="Nombre" ngModel required #Nombre="ngModel"><br>
       <p>campo valido: {{ Nombre.valid }}</p>
       <p>click en campo: {{ Nombre.touched }}</p>
+      <p>click en campo: {{ Nombre}}</p>
     </div>
     <div class="form-group">
       <label for="name">Apellido</label>
-      <input name="Apellido" ngModel required #Apellido="ngModel">
+      <input name="Apellido" ngModel required #Apellido="ngModel" pattern="[1-9]" minlength="8">
       <p>campo valido: {{ Apellido.valid }}</p>
     </div>
     <select class="form-control" id="power" required>
