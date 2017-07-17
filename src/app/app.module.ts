@@ -21,6 +21,7 @@ import { DaLoaderModule } from './da-loader/da-loader.module';
 import { AnimationComponent } from './animation/animation/animation.component';
 import { SanitizerComponent } from './sanitizer/sanitizer.component';
 import { SanitizerPipe } from './pipes/sanitizer.pipe';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SanitizerPipe } from './pipes/sanitizer.pipe';
     ResolveRoutingComponent,
     AnimationComponent,
     SanitizerComponent,
-    SanitizerPipe
+    SanitizerPipe,
+    TestComponent
   ],
   imports: [
     HttpModule,

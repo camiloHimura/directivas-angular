@@ -12,6 +12,8 @@ import { AnimationComponent } from './../animation/animation/animation.component
 import { ChildrenRoutingComponent } from './../routes-params/children-routing/children-routing.component';
 import { ResolveRoutingComponent } from './../routes-params/resolve-routing/resolve-routing.component';
 import { RouteResolveService } from './../services/route-resolve.service';
+import { TestComponent } from './../test/test.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/directivas', pathMatch: 'full' },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'observables', component: ObservablesComponent },
   { path: 'animaciones', component: AnimationComponent },
   { path: 'sanitizer', component: SanitizerComponent },
+  { path: 'test', component: TestComponent },
   { path: 'rutas', component: RoutesParamsComponent,
     children: [{
                 path: 'children/:id',
