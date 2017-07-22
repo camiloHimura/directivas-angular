@@ -16,7 +16,7 @@ export class AppComponent {
   urlLoader = 'solos';
 
   constructor(location: Location) {
-      this.location = location;
-      console.log(this.location);
+/*       this.location = location;
+      console.log(this.location); */
   }
 }

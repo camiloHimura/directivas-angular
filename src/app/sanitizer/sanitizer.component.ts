@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SanitizerComponent implements OnInit {
 
-  contenidoHtml: string;
   constructor() { }
 
-  ngOnInit() {
-    this.contenidoHtml = '<h1>Hola desde contenido dinamico</h1>';
-  }
+  ngOnInit() {}
 
+  get contenidoHtml(){
+    console.log('get contenidoHtml');
+    return '<h1>Hola desde contenido dinamico</h1>';
+  }
 }

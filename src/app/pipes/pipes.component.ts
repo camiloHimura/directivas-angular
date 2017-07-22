@@ -11,12 +11,13 @@ export class PipesComponent implements OnInit {
   today: number = Date.now();
   title: String = 'cristian camilo';
   collection: string[] = ['a', 'b', 'c', 'd'];
+  time: Observable <string>;
   constructor() { }
 
   ngOnInit() {
+    this.time = new Observable <string> ((observer: any) => {
+      setInterval(() => observer.next(new Date().toString()), 1000);
+    });
   }
 
-  time = new Observable<string> ((observer: any) => {
-    setInterval(() => observer.next(new Date().toString()), 1000);
-  });
 }

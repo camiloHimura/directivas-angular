@@ -22,6 +22,16 @@ import { AnimationComponent } from './animation/animation/animation.component';
 import { SanitizerComponent } from './sanitizer/sanitizer.component';
 import { SanitizerPipe } from './pipes/sanitizer.pipe';
 import { TestComponent } from './test/test.component';
+import { ComponentComponent } from './components/component/component.component';
+import { InputComponent } from './components/input/input.component';
+import { OutputComponent } from './components/output/output.component';
+import { OnPushComponent } from './detection-strategy/on-push/on-push.component';
+import { DetectionStrategyComponent } from './detection-strategy/detection-strategy.component';
+import { ComponentsComponent } from './components/components.component';
+import { NgContendComponent } from './components/ng-contend/ng-contend.component';
+import { ViewComponent } from './components/view/view.component';
+import { ContentChildComponent } from './components/content-child/content-child.component';
+import { ShowViewComponent } from './components/show-view/show-view.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +48,17 @@ import { TestComponent } from './test/test.component';
     AnimationComponent,
     SanitizerComponent,
     SanitizerPipe,
-    TestComponent
+    TestComponent,
+    ComponentComponent,
+    InputComponent,
+    OutputComponent,
+    OnPushComponent,
+    DetectionStrategyComponent,
+    ComponentsComponent,
+    NgContendComponent,
+    ViewComponent,
+    ContentChildComponent,
+    ShowViewComponent
   ],
   imports: [
     HttpModule,

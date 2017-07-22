@@ -13,17 +13,17 @@ import { ChildrenRoutingComponent } from './../routes-params/children-routing/ch
 import { ResolveRoutingComponent } from './../routes-params/resolve-routing/resolve-routing.component';
 import { RouteResolveService } from './../services/route-resolve.service';
 import { TestComponent } from './../test/test.component';
-
+import { OnPushComponent } from './../detection-strategy/on-push/on-push.component';
+import { DetectionStrategyComponent } from './../detection-strategy/detection-strategy.component';
+import { ComponentsComponent } from './../components/components.component';
+import { ComponentComponent } from './../components/component/component.component';
+import { NgContendComponent } from './../components/ng-contend/ng-contend.component';
+import { ContentChildComponent } from './../components/content-child/content-child.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/directivas', pathMatch: 'full' },
   { path: 'directivas', component: DirectivesComponent },
   { path: 'pipes', component: PipesComponent },
-  { path: 'formularios', component: FormsComponent },
-  { path: 'observables', component: ObservablesComponent },
-  { path: 'animaciones', component: AnimationComponent },
-  { path: 'sanitizer', component: SanitizerComponent },
-  { path: 'test', component: TestComponent },
   { path: 'rutas', component: RoutesParamsComponent,
     children: [{
                 path: 'children/:id',
@@ -33,6 +33,35 @@ const routes: Routes = [
                 path: 'resolve',
                 resolve: { info: RouteResolveService },
                 component: ResolveRoutingComponent
+              }]
+  },
+  { path: 'formularios', component: FormsComponent },
+  { path: 'observables', component: ObservablesComponent },
+  { path: 'animaciones', component: AnimationComponent },
+  { path: 'sanitizer', component: SanitizerComponent },
+  { path: 'test', component: TestComponent },
+  { path: 'componentes', component: ComponentsComponent,
+    children: [{
+                path: '',
+                component: ComponentComponent
+              }, {
+                path: 'eventsComponent',
+                component: ComponentComponent
+              }, {
+                path: 'ngContent',
+                component: NgContendComponent
+              }, {
+                path: 'contenChild',
+                component: ContentChildComponent
+              }]
+  },
+  { path: 'detectionStategy', component: DetectionStrategyComponent,
+    children: [{
+                path: '',
+                component: OnPushComponent
+              }, {
+                path: 'OnPush',
+                component: OnPushComponent
               }]
   },
 ];

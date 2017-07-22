@@ -1,0 +1,22 @@
+<h2>Info recibida desde componete hijo</h2>
+<br>
+<p>{{infoVoid}}</p>
+<p>{{infoString}}</p>
+<br>
+<app-input [progress]="number" #inputComponent
+  (infoVacio)="getInfoVoid($event)"
+  (infoData)="getInfoString($event)"
+></app-input>
+<br>
+
+<h2>Template reference variables</h2>
+<code>&lt;app-input number="90" #inputComponent &gt;&lt;app-input &gt;</code><br>
+<code>&lt;button  (click)="inputComponent.alert()" &gt;&lt;button &gt;</code><br>
+<button (click)="inputComponent.alert()">Alert #inputComponent</button>
+<br><br>
+
+<h2>ngOnChanges inputComponent</h2>
+<label for="number">Nombre: </label>
+<input [(ngModel)]="number" id="number" type="text">
+<br><br>
+<br><br>
