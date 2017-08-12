@@ -1,17 +1,21 @@
 <div class="container">
   <h1>Hero Form</h1>
-  <form (ngSubmit)="onSubmit(camiloForm, Nombre)" #camiloForm="ngForm">
+  <form (ngSubmit)="onSubmit(camiloForm, Nombre, Apellido)" #camiloForm="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
       <input name="Nombre" ngModel required #Nombre="ngModel"><br>
       <p>campo valido: {{ Nombre.valid }}</p>
       <p>click en campo: {{ Nombre.touched }}</p>
-      <p>click en campo: {{ Nombre}}</p>
     </div>
     <div class="form-group">
-      <label for="name">Apellido</label>
-      <input name="Apellido" ngModel required #Apellido="ngModel" pattern="[1-9]" minlength="8">
+      <label for="Apellido">Apellido</label>
+      <input name="Apellido" ngModel #Apellido="ngModel" minlength="8">
       <p>campo valido: {{ Apellido.valid }}</p>
+    </div>
+    <div class="form-group">
+      <label for="name">CC</label>
+      <input name="CC" ngModel #CC="ngModel" pattern="[1-9]" maxlength="6">
+      <p>campo valido: {{ CC.valid }}</p>
     </div>
     <select class="form-control" id="power" required>
       <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
