@@ -32,6 +32,8 @@ import { NgContendComponent } from './components/ng-contend/ng-contend.component
 import { ViewComponent } from './components/view/view.component';
 import { ContentChildComponent } from './components/content-child/content-child.component';
 import { ShowViewComponent } from './components/show-view/show-view.component';
+import { GeneralComponent } from './observables/general/general.component';
+import { OperatorsComponent } from './observables/operators/operators.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { ShowViewComponent } from './components/show-view/show-view.component';
     NgContendComponent,
     ViewComponent,
     ContentChildComponent,
-    ShowViewComponent
+    ShowViewComponent,
+    GeneralComponent,
+    OperatorsComponent
   ],
   imports: [
     HttpModule,

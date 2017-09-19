@@ -1,0 +1,8 @@
+.seekName{
+    padding: 5px;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid gray;
+}

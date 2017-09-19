@@ -1,3 +1,5 @@
+import { OperatorsComponent } from '../observables/operators/operators.component';
+import { GeneralComponent } from '../observables/general/general.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DirectivesComponent } from './../directives/directives.component';
@@ -36,10 +38,20 @@ const routes: Routes = [
               }]
   },
   { path: 'formularios', component: FormsComponent },
-  { path: 'observables', component: ObservablesComponent },
   { path: 'animaciones', component: AnimationComponent },
   { path: 'sanitizer', component: SanitizerComponent },
   { path: 'test', component: TestComponent },
+  { path: 'observables', component: ObservablesComponent,
+  children: [{
+              path: '',
+              component: GeneralComponent
+            }, {
+              path: 'general',
+              component: GeneralComponent
+            }, {
+              path: 'operadores',
+              component: OperatorsComponent
+            }] },
   { path: 'componentes', component: ComponentsComponent,
     children: [{
                 path: '',
