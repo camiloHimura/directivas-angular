@@ -6,6 +6,16 @@ import { Subscription } from 'rxjs/Rx';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/observable/fromPromise';
+
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/pluck';
+import 'rxjs/add/operator/scan';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/takeLast';
+import 'rxjs/add/operator/delay';
 
 @Component({
   selector: 'app-operators',
@@ -15,12 +25,16 @@ import 'rxjs/add/observable/fromPromise';
 export class OperatorsComponent implements OnInit, AfterViewInit {
 
 @ViewChild('nameView') nameView;
+valNameView = '';
 
 onInput$: Observable<any>;
+
 onArray$: Observable<any>;
+valArray: string;
+
 onObject$: Observable<any>;
 onPromise$: Observable<any>;
-arrayData = [123, 12, 313, 435, 345, 35];
+arrayData = [1, 1, 1, 1, 1, 1];
 ObjectData = [{name: 'camilo', lastName: 'colmenares'},
                 {name: 'camilo2', lastName: 'colmenares2'},
                 {name: 'camilo3', lastName: 'colmenares3'},
@@ -60,22 +74,41 @@ private suscribeGetDo: Subscription = null;
     }
 
     ngAfterViewInit() {
-        this.onInput$ = Observable.fromEvent(this.nameView.nativeElement, 'keyup');
-        this.onInput$.subscribe( info => console.log(info));
-
-        this.onArray$ = Observable.from(this.arrayData);
-        this.onArray$.subscribe( info => console.log(info),
-                                error => console.log(error),
-                                   () => console.log(`complete array`));
-
-        this.onObject$ = Observable.from(this.ObjectData);
-        this.onObject$.subscribe( info => console.log(info),
-        error => console.log(error),
-        () => console.log(`complete object`));
-        this.promise();
+      //this.byEvent();
+      this.byArray();
+      //this.byPromise();
+/*       
+      this.onObject$ = Observable.from(this.ObjectData);
+      this.onObject$.subscribe( info => console.log(info),
+      error => console.log(error),
+      () => console.log(`complete object`));
+      this.promise(); */
     }
 
-    promise() {
+    byEvent() {
+      Observable.fromEvent(this.nameView.nativeElement, 'keyup')
+      //.take(4)
+      .pluck('target', 'value')
+      .do(info => console.log(info))
+      .debounceTime(1000)
+      .map(data => Number(data))
+      .do(info => console.log(info))
+      //.do(info => console.log(info))
+      .subscribe( (info: any) => this.valNameView = info);
+    }
+
+    byArray() {
+      Observable.from(this.arrayData)
+      .do(info => console.log(info))
+      .scan((acc, curr) => acc + curr)
+      .takeLast(1)
+      .delay(0)
+      .subscribe( (info: any) => this.valArray = info,
+                  error => console.log(error),
+                  () => console.log(`complete array`));
+    }
+
+    byPromise() {
         const promise = new Promise((resolve, reject) => {
             setTimeout( () => { resolve('Desde Promesa'); }, 2000);
         });
